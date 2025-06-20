@@ -1,17 +1,30 @@
 # Teacher´s Day 📕👩‍🏫
-¡Feliz Día del Maestro!
-Gracias por cada lección, por cada momento de paciencia y por inspirarnos a ser mejores cada día. Tus enseñanzas van más allá del aula y dejan una huella imborrable en nuestros corazones. Apreciamos tu dedicación y el amor con el que compartes tu conocimiento.
+[![forthebadge](http://forthebadge.com/images/badges/made-with-css.svg)](https://www.linkedin.com/in/drphp/)
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/drphp/)
+
+Estimado Maestro, 
+
+Apreciamos tu dedicación y el amor con el que compartes tu conocimiento.
 
 Con todo mi cariño, PHPeitor
 
-Para utilizar este proyecto, sigue estos pasos:
+## 🚀 Quick Start
 
-- Clona este repositorio en tu máquina local utilizando el comando git clone [URL_del_repositorio].
-- Abre el archivo index.html en tu navegador web preferido.
-
+1. **Clonar este repositorio**
+```bash
+git clone https://github.com/phpeitor/teacher-day.git
+cd teacher-day
 ```
-    .\index.html
+2. **Ejecutar comando**
+```bash
+index.html
 ```
 
 [![Video](https://img.youtube.com/vi/1-KaqQisTtU/0.jpg)](https://www.youtube.com/watch?v=1-KaqQisTtU)  
 [Ver demo](https://www.youtube.com/watch?v=1-KaqQisTtU)
+
+<a href="#" target="_self" style="pointer-events: none;">
+  <img src="https://wiesseconsultores.com/demo.gif" alt="Demo Git">
+</a>
+
+*If you're interested in knowing the powerlevel configuration to get this prompt, have a look at [this gist](https://github.com/phpeitor/).*
