@@ -1,9 +1,35 @@
 
-/*BRAIN*/
-body{
-	background: rgb(49 55 48);
-	font-family: Josefin Sans, Helvetica, Helvetica Neue, Arial, sans-serif;
+:root {
+    --bg-color: rgba(8, 52, 1, 0.7); 
 }
+
+#video-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1; 
+    pointer-events: none; 
+}
+
+body {
+    background: rgba(8, 52, 1, 0.7);
+    font-family: Josefin Sans, Helvetica, Helvetica Neue, Arial, sans-serif;
+    transition: background 0.5s ease;
+}
+
 .brainContainer{
     width:50vw;
     height:50vw;
@@ -15,7 +41,7 @@ body{
     transform:translate(-50%,-50%);
     overflow:hidden;
     cursor:pointer;
-    z-index:-1;
+    filter: brightness(0.45);
 }
 svg{
     height:100%;
@@ -24,25 +50,34 @@ svg{
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
+    z-index: 2;
 }
 path{
-	fill:transparent;
+	  fill: 0.45;
+    stroke: #023838;
+    stroke-width: 1.5;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 2s ease-in-out;
 }
-.brainPath{
-	stroke:#00ff00;
-	stroke-width:1;
+.brainPath {
+    stroke: #FF5733;  
+    stroke-width: 2;  
 }
-.brainCircle{
-	stroke:#00FF00;
-	fill:#00FF00;
+
+.brainCircle {
+    stroke: #33A1FF;  
+    fill: #33A1FF;
 }
-.brainRect{
-	stroke:#00FF00;
-	fill:#00FF00;
+
+.brainRect {
+    stroke: #900;    
+    fill: #FF0000;   
 }
-.brainEllipse{
-	stroke:#00FF00;
-	fill:#00FF00;
+
+.brainEllipse {
+    stroke: #8A2BE2; 
+    fill: #8A2BE2;
 }
 .animatePaths{
   animation: goPath 3000ms alternate infinite;
@@ -75,8 +110,6 @@ path{
   }
 }
 
-/*TEXT*/
-
 .stage {
   width: 100%;
   height: 100%;
@@ -85,15 +118,18 @@ path{
   justify-content: center;
 }
 .wrapper {
-  position: relative;
-  color: #fff;
+  position: absolute;
+  color: #023838;
   font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   padding-top: 0.65rem;
   padding-left: 0.5rem;
   padding-right: 0.36rem;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.10rem;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
 }
 .slash {
   position: absolute;
@@ -103,7 +139,7 @@ path{
   transform-origin: center center;
   width: 0.15rem;
   height: 145%;
-  background: #fff;
+  background: #afbebe;
   z-index: 4;
   -webkit-animation: slash 6s ease-in infinite;
           animation: slash 6s ease-in infinite;
@@ -128,7 +164,7 @@ path{
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #023838;
 }
 .sides {
   position: absolute;
@@ -140,7 +176,7 @@ path{
 }
 .sides .side {
   position: absolute;
-  background: #fff;
+  background: #023838;
 }
 .sides .side:nth-child(1) {
   top: 0;
@@ -423,7 +459,6 @@ path{
   }
 }
 
-/*LOGO*/
 .logo {
   width: 120px;
   position: relative;
@@ -438,12 +473,12 @@ path{
   bottom: 0;
   left: 0;
   right: 0;
-  border: 1px dashed #fff;
+  border: 1px dashed #e5d2d2;
   border-radius: 5px;
 }
 
 .box {
-  background: #fff;
+  background: #f8e9e9;
   border-radius: 5px;
   padding: 5px 5px;
   box-shadow: 1px 13px 79px 4px rgba(0, 0, 0, 0.25);

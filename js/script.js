@@ -446,8 +446,6 @@ var svg = `
 </svg>
 `;
 
-/*Helper functions*/
-/******************/
 function complimentary(x){
   return 255 - Math.abs((x - 127.5));
 }
@@ -458,16 +456,15 @@ function complimentary3(x){
   return 255 - Math.abs((x - 191.25));
 }
 
-//correct for numbers over 255 and under 0
 function corrected(x){
-  var val = (x*1);
-  if(val > 255){
-    return 255;
-  } else if (val < 0){
-    return 0;
-  } else {
-    return Math.round(val);
-  }
+	var val = (x*1);
+	if(val > 255){
+		return 255;
+	} else if (val < 0){
+		return 0;
+	} else {
+		return Math.round(val);
+	}
 }
 
 function addClass(query, theClass) {
@@ -477,56 +474,42 @@ function addClass(query, theClass) {
 	}
 }
 
-//random number generator
 function randNum(from, to) {
 	return Math.floor(Math.random() * (to - from + 1) + from);
 }
-/******************/
-/*Helper functions*/
 
 function setColors(param){
 	var r,g,b;
-//get new random color
-	//lighter if "light" is passed
-	//or if it's day vs. night
-	
-	//get hours
 	var d = new Date();
 	var hh = d.getHours();
 	
 	/*param == "light"*/
 	if( hh > 5 && hh < 17 ){
-  	r = randNum(200,255);
-  	g = randNum(200,255);
-  	b = randNum(200,255);
-	//darker if "dark" is passed
+		r = randNum(200,255);
+		g = randNum(200,255);
+		b = randNum(200,255);
 	/*param == "dark"*/
-	} else if ( hh < 6 || hh > 18  ){
+	} else if ( hh < 6 || hh > 18 ){
 		r = randNum(0,50);
-  	g = randNum(0,50);
-  	b = randNum(0,50);
-		//or else use default lime and black styling
+		g = randNum(0,50);
+		b = randNum(0,50);
 	} else {
 		return;
 	}
-	//set background color
-  var bgColor = "rgb(" + r + "," + g + "," + b + ")";
 
-  //get a complimentary color 1
-  var r1 = corrected(Math.round(complimentary(r)));
-  var g1 = corrected(Math.round(complimentary(g)));
-  var b1 = corrected(Math.round(complimentary(b)));
-  var brainColor = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
-	//get a complimentary color 2
-  var r2 = corrected(Math.round(complimentary2(r)));
-  var g2 = corrected(Math.round(complimentary2(g)));
-  var b2 = corrected(Math.round(complimentary2(b)));
-  var brainColor2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
-  //get a complimentary color 3
-  var r3 = corrected(Math.round(complimentary3(r)));
-  var g3 = corrected(Math.round(complimentary3(g)));
-  var b3 = corrected(Math.round(complimentary3(b)));
-  var brainColor3 = "rgb(" + r3 + "," + g3 + "," + b3 + ")";
+	var bgColor = "rgb(" + r + "," + g + "," + b + ")";
+	var r1 = corrected(Math.round(complimentary(r)));
+	var g1 = corrected(Math.round(complimentary(g)));
+	var b1 = corrected(Math.round(complimentary(b)));
+	var brainColor = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
+	var r2 = corrected(Math.round(complimentary2(r)));
+	var g2 = corrected(Math.round(complimentary2(g)));
+	var b2 = corrected(Math.round(complimentary2(b)));
+	var brainColor2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
+	var r3 = corrected(Math.round(complimentary3(r)));
+	var g3 = corrected(Math.round(complimentary3(g)));
+	var b3 = corrected(Math.round(complimentary3(b)));
+	var brainColor3 = "rgb(" + r3 + "," + g3 + "," + b3 + ")";
 	
 	var bp = document.getElementsByClassName("brainPath");
 	for (var i=0; i<bp.length; i++){
@@ -547,7 +530,8 @@ function setColors(param){
 		bc[i].style.stroke = brainColor3;
 		bc[i].style.fill = brainColor3;
 	}
-	document.body.style.backgroundColor = bgColor;
+	//document.body.style.backgroundColor = bgColor;
+	document.documentElement.style.setProperty('--bg-color', bgColor);
 }
 
 //gets the current line length of the svg
@@ -587,6 +571,7 @@ function neuralize() {
 document.querySelector(".brainContainer").addEventListener("click", function(){setColors("dark")});
 
 neuralize();
+//console.log(document.querySelector('.brainContainer').innerHTML); 
 setColors("dark");
 
 const curry = f => (...args) =>
