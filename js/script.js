@@ -530,18 +530,16 @@ function setColors(param){
 		bc[i].style.stroke = brainColor3;
 		bc[i].style.fill = brainColor3;
 	}
-	//document.body.style.backgroundColor = bgColor;
+
 	document.documentElement.style.setProperty('--bg-color', bgColor);
 }
 
-//gets the current line length of the svg
 function animateSVGs() {
 	var allPaths = document.querySelectorAll("path");
 	for (var i = 0; i < allPaths.length; i++) {
 		var lineLength = allPaths[i].getTotalLength();
 		allPaths[i].style.strokeDasharray = lineLength;
 		allPaths[i].style.strokeDashoffset = lineLength;
-		//neg animation times start the animation midway
 		allPaths[i].style.animationDelay = randNum(-50, 50) / 10 + "s";
 	}
 	var allRects = document.querySelectorAll("rect");
@@ -571,7 +569,6 @@ function neuralize() {
 document.querySelector(".brainContainer").addEventListener("click", function(){setColors("dark")});
 
 neuralize();
-//console.log(document.querySelector('.brainContainer').innerHTML); 
 setColors("dark");
 
 const curry = f => (...args) =>
