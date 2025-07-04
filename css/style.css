@@ -57,6 +57,7 @@ body {
     transition: filter 0.5s ease;
     animation: pulse 2s infinite ease-in-out;
 }
+
 svg{
     height:100%;
     width:100%;
@@ -66,6 +67,7 @@ svg{
     transform:translate(-50%,-50%);
     z-index: 2;
 }
+
 path{
 	  fill: 0.45;
     stroke: #023838;
@@ -74,6 +76,7 @@ path{
     stroke-dashoffset: 1000;
     transition: stroke-dashoffset 2s ease-in-out;
 }
+
 .brainPath {
     stroke: #FF5733;  
     stroke-width: 2;  
@@ -93,15 +96,19 @@ path{
     stroke: #8A2BE2; 
     fill: #8A2BE2;
 }
+
 .animatePaths{
   animation: goPath 3000ms alternate infinite;
 }
+
 .animateCircles{
   animation: goCircle 3000ms alternate infinite;
 }
+
 .animateRects{
   animation: goRect 3000ms alternate infinite;
 }
+
 @keyframes goPath {
   to {
     stroke-dashoffset: 0;
@@ -145,6 +152,7 @@ path{
   left: 50%; 
   transform: translate(-50%, -50%);
 }
+
 .slash {
   position: absolute;
   top: 50%;
@@ -158,6 +166,7 @@ path{
   -webkit-animation: slash 6s ease-in infinite;
           animation: slash 6s ease-in infinite;
 }
+
 .slash:before {
   content: '';
   display: block;
@@ -170,6 +179,7 @@ path{
   background: #232323;
   z-index: -1;
 }
+
 .slash:after {
   content: '';
   display: block;
@@ -180,6 +190,7 @@ path{
   height: 100%;
   background: #023838;
 }
+
 .sides {
   position: absolute;
   width: 100%;
@@ -188,10 +199,12 @@ path{
   left: 0;
   overflow: hidden;
 }
+
 .sides .side {
   position: absolute;
   background: #023838;
 }
+
 .sides .side:nth-child(1) {
   top: 0;
   left: 0;
@@ -201,6 +214,7 @@ path{
   -webkit-animation: side-top ease 6s infinite;
           animation: side-top ease 6s infinite;
 }
+
 .sides .side:nth-child(2) {
   top: 0;
   right: 0;
@@ -210,6 +224,7 @@ path{
   -webkit-animation: side-right ease 6s infinite;
           animation: side-right ease 6s infinite;
 }
+
 .sides .side:nth-child(3) {
   left: 0;
   bottom: 0;
@@ -219,6 +234,7 @@ path{
   -webkit-animation: side-bottom ease 6s infinite;
           animation: side-bottom ease 6s infinite;
 }
+
 .sides .side:nth-child(4) {
   top: 0;
   left: 0;
@@ -228,12 +244,15 @@ path{
   -webkit-animation: side-left ease 6s infinite;
           animation: side-left ease 6s infinite;
 }
+
 .text {
   position: relative;
 }
+
 .text--backing {
   opacity: 0;
 }
+
 .text--left {
   position: absolute;
   top: 0;
@@ -241,11 +260,13 @@ path{
   height: 100%;
   overflow: hidden;
 }
+
 .text--left .inner {
   transform: translateX(100%);
   -webkit-animation: text-left 6s ease-in-out infinite;
           animation: text-left 6s ease-in-out infinite;
 }
+
 .text--right {
   position: absolute;
   top: 0;
@@ -253,11 +274,13 @@ path{
   height: 100%;
   overflow: hidden;
 }
+
 .text--right .inner {
   transform: translateX(-200%);
   -webkit-animation: text-right 6s ease-in-out infinite;
           animation: text-right 6s ease-in-out infinite;
 }
+
 @-webkit-keyframes slash {
   0% {
     transform: translate(-50%, -50%) rotate(-24deg) scaleY(0);
@@ -478,6 +501,7 @@ path{
   position: relative;
   transform: rotate(-20deg) translate(50px, 100px);
 }
+
 .logo:before {
   content: "";
   display: block;
@@ -499,9 +523,11 @@ path{
   position: relative;
   transition: transform 0.4s;
 }
+
 .box img {
   width: 100%;
 }
+
 .box:hover {
   transform: translate(14%, 35%);
 }

@@ -449,9 +449,11 @@ var svg = `
 function complimentary(x){
   return 255 - Math.abs((x - 127.5));
 }
+
 function complimentary2(x){
   return 255 - Math.abs((x - 63.75));
 }
+
 function complimentary3(x){
   return 255 - Math.abs((x - 191.25));
 }
@@ -580,5 +582,3 @@ const compose = (f, g) => x => f(g(x));
 const composeN = (...fns) => (...args) =>
 fns.reverse().
 reduce((x, f) => f.apply(f, [].concat(x)), args);
-
-
