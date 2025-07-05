@@ -138,6 +138,7 @@ path{
   align-items: center;
   justify-content: center;
 }
+
 .wrapper {
   position: absolute;
   color: #023838;
@@ -148,7 +149,7 @@ path{
   padding-left: 0.5rem;
   padding-right: 0.36rem;
   padding-bottom: 0.10rem;
-  top: 50%; 
+  bottom: 0;
   left: 50%; 
   transform: translate(-50%, -50%);
 }
@@ -159,8 +160,8 @@ path{
   left: 50%;
   transform: translate(-50%, -50%) rotate(-24deg) scaleY(0);
   transform-origin: center center;
-  width: 0.15rem;
-  height: 145%;
+  width: 0.25rem;
+  height: 110%;
   background: #afbebe;
   z-index: 4;
   -webkit-animation: slash 6s ease-in infinite;
@@ -174,8 +175,8 @@ path{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 0.75rem;
-  height: 120%;
+  width: 0.15rem;
+  height: 80%;
   background: #232323;
   z-index: -1;
 }
