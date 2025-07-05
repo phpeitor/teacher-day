@@ -21,7 +21,10 @@ index.html
 ```
 
 [![Video](https://img.youtube.com/vi/1-KaqQisTtU/0.jpg)](https://www.youtube.com/watch?v=1-KaqQisTtU)  
-[Ver demo](https://www.youtube.com/watch?v=1-KaqQisTtU)
+[Ver demo?v1.0](https://www.youtube.com/watch?v=1-KaqQisTtU)
+
+[![Video](https://img.youtube.com/vi/fONWx0vGRk8/0.jpg)](https://www.youtube.com/watch?v=fONWx0vGRk8)  
+[Ver demo?v2.0](https://www.youtube.com/watch?v=fONWx0vGRk8)
 
 <a href="#" target="_self" style="pointer-events: none;">
   <img src="https://wiesseconsultores.com/demo.gif" alt="Demo Git">
