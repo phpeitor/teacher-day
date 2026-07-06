@@ -1,48 +1,64 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Teacher's Day</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Landing de homenaje por el Dia del Maestro.">
+  <title>Dia del Maestro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='75'>👨‍🏫</text></svg>" />
 </head>
 <body>
-	<video id="video-background" autoplay muted loop playsinline>
-		<source src="./resources/video.mp4" type="video/mp4" />
-		Tu navegador no soporta videos HTML5.
-	</video>
-	
-	<div class="logo">
-	  <div class="box">
-		<img src="./resources/logo.png" />
-	  </div>
-	</div>
+  <video id="video-background" autoplay muted loop playsinline aria-hidden="true">
+    <source src="./resources/video.mp4" type="video/mp4" />
+    Tu navegador no soporta videos HTML5.
+  </video>
 
-	<div class="brainContainer"></div>
-		
-	<div class="stage">
-		<div class="wrapper">
-			<div class="slash"></div>
+  <main class="landing">
+    <div class="logo" aria-label="Logo institucional">
+      <div class="box">
+        <img src="./resources/logo.png" alt="Logo de la institucion" />
+      </div>
+    </div>
 
-			<div class="sides">
-				<div class="side"></div>
-				<div class="side"></div>
-				<div class="side"></div>
-				<div class="side"></div>
-			</div>
-			
-			<div class="text">
-				<div class="text--backing">Día del Maestro</div>
-				<div class="text--left">
-					<div class="inner">Día del Maestro</div>
-				</div>
-				<div class="text--right">
-					<div class="inner">Día del Maestro</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<script  src="./js/script.js"></script>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="heroContent">
+        <p class="eyebrow">Homenaje especial</p>
+        <h1 class="heroTitle" id="hero-title">Dia del <span>Maestro</span></h1>
+      </div>
+
+      <div class="visualPanel" aria-label="Ilustracion animada de aprendizaje">
+        <button class="brainContainer" type="button" aria-label="Cambiar colores de la ilustracion"></button>
+      </div>
+    </section>
+
+    <div class="stage" aria-hidden="true">
+      <div class="wrapper">
+        <div class="slash"></div>
+
+        <div class="sides">
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+          <div class="side"></div>
+        </div>
+
+        <div class="text">
+          <div class="text--backing">PHPeitor</div>
+          <div class="text--left">
+            <div class="inner">Dia del Maestro</div>
+          </div>
+          <div class="text--right">
+            <div class="inner">Dia del Maestro</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/script.js"></script>
 </body>
 </html>

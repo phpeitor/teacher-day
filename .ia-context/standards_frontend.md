@@ -6,7 +6,8 @@
 - Stack actual: HTML, CSS y JavaScript vanilla, sin bundler, framework ni dependencias locales.
 - Entrada principal: `index.html`.
 - Estilos: `css/style.css`.
-- Interactividad y SVG principal: `js/script.js`.
+- Interactividad: `js/script.js`.
+- SVG principal: `resources/brain.svg`, cargado por JavaScript y con fallback visual.
 - Assets locales: `resources/video.mp4` y `resources/logo.png`.
 - La pagina debe abrirse directamente desde `index.html` o servirse como archivo estatico en Apache.
 
@@ -16,8 +17,8 @@
 - No introducir frameworks, build steps, paquetes npm ni tooling nuevo sin una razon explicita.
 - Mantener rutas relativas con `./` para conservar compatibilidad al abrir el HTML directamente.
 - Priorizar mantener la experiencia visual actual: fondo de video, overlay verde, logo inclinado, SVG central animado y titulo animado.
-- Evitar reescrituras grandes de `script.js`; contiene un SVG extenso y sensible a errores de marcado.
-- Si una mejora requiere separar el SVG a un archivo externo, hacerlo solo si se solicita o si el cambio lo justifica claramente.
+- Mantener `script.js` pequeno; no volver a insertar SVGs extensos dentro del JavaScript.
+- Mantener ilustraciones complejas como archivos SVG externos en `resources/`.
 
 ## HTML
 
@@ -44,14 +45,14 @@
 - Usar JavaScript vanilla compatible con navegador, sin transpiler.
 - Mantener el script cargado al final del `body` para poder consultar elementos sin esperar `DOMContentLoaded`, salvo que se mueva la etiqueta.
 - No usar modulos ES si no se actualiza el HTML y se valida compatibilidad.
-- Evitar tocar el string SVG masivo salvo que la tarea sea especificamente visual/SVG.
+- Evitar incrustar SVGs masivos como template strings.
 - Si se agregan selectores DOM, validar que el elemento exista antes de modificarlo.
 - No agregar logica pesada ni dependencias externas para una interaccion simple.
 - Mantener nombres de clases existentes cuando esten enlazadas a CSS: `brainContainer`, `brainPath`, `brainCircle`, `brainRect`, `brainEllipse`, `animatePaths`, `animateCircles`, `animateRects`.
 
 ## SVG
 
-- El SVG principal vive dentro de `js/script.js` como template string.
+- El SVG principal vive en `resources/brain.svg`.
 - Las clases del SVG son usadas por CSS; no renombrarlas sin actualizar estilos.
 - Mantener `viewBox` y dimensiones internas salvo que se busque redisenar la ilustracion.
 - Para cambios de color o animacion, preferir CSS antes que editar cientos de paths.

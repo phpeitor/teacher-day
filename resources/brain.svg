@@ -1,0 +1,82 @@
+<svg class="brainSvg" viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="brainTitle brainDescription">
+  <title id="brainTitle">Cerebro creativo conectado</title>
+  <desc id="brainDescription">Ilustracion de un cerebro con nodos y circuitos que simbolizan aprendizaje, creatividad y gratitud.</desc>
+
+  <style>
+    .brainSvg { background: transparent; }
+    .brainPath,
+    .brainRect {
+      fill: none;
+      stroke: var(--brain-path-color, #ffd166);
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 620;
+      stroke-dashoffset: 620;
+      animation: drawLine 4.5s ease-in-out infinite alternate;
+    }
+    .brainOutline { stroke-width: 7; }
+    .brainRect {
+      stroke: var(--brain-accent-color, #f97316);
+      stroke-width: 4;
+    }
+    .brainCircle,
+    .brainEllipse {
+      fill: var(--brain-node-color, #5eead4);
+      stroke: rgba(255, 255, 255, 0.82);
+      stroke-width: 3;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: blinkNode 2.8s ease-in-out infinite;
+    }
+    .brainEllipse { fill: var(--brain-accent-color, #f97316); }
+    @keyframes drawLine { to { stroke-dashoffset: 0; } }
+    @keyframes blinkNode {
+      0%, 100% { opacity: 0.62; transform: scale(0.88); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+  </style>
+
+  <defs>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g class="brainGlow" filter="url(#softGlow)">
+    <path class="brainPath brainOutline" d="M181 70c-38 2-68 31-72 68-24 10-39 33-39 60 0 36 29 65 65 65h15c12 21 35 35 61 35s49-14 61-35h16c35 0 64-29 64-65 0-30-21-56-49-63-9-39-43-66-84-66-13 0-26 3-38 9z" />
+    <path class="brainPath" d="M184 74c-17 19-18 43-5 61 11 16 31 23 51 17" />
+    <path class="brainPath" d="M112 151c23-10 48-4 62 15 13 17 14 41 2 60" />
+    <path class="brainPath" d="M248 87c-15 15-17 36-6 53 12 19 36 27 59 20" />
+    <path class="brainPath" d="M253 192c26-15 57-7 72 18" />
+    <path class="brainPath" d="M159 252c22-4 43 6 56 25" />
+    <path class="brainPath" d="M227 156v132" />
+  </g>
+
+  <g class="brainCircuits">
+    <line class="brainRect" x1="80" y1="198" x2="34" y2="198" />
+    <line class="brainRect" x1="340" y1="198" x2="386" y2="198" />
+    <line class="brainRect" x1="227" y1="70" x2="227" y2="24" />
+    <line class="brainRect" x1="168" y1="286" x2="126" y2="326" />
+    <line class="brainRect" x1="286" y1="286" x2="328" y2="326" />
+    <line class="brainRect" x1="124" y1="114" x2="84" y2="74" />
+    <line class="brainRect" x1="304" y1="116" x2="344" y2="76" />
+  </g>
+
+  <g class="brainNodes">
+    <circle class="brainCircle" cx="34" cy="198" r="8" />
+    <circle class="brainCircle" cx="386" cy="198" r="8" />
+    <circle class="brainCircle" cx="227" cy="24" r="8" />
+    <circle class="brainCircle" cx="126" cy="326" r="8" />
+    <circle class="brainCircle" cx="328" cy="326" r="8" />
+    <circle class="brainCircle" cx="84" cy="74" r="8" />
+    <circle class="brainCircle" cx="344" cy="76" r="8" />
+    <circle class="brainEllipse" cx="227" cy="156" r="12" />
+    <circle class="brainEllipse" cx="176" cy="226" r="9" />
+    <circle class="brainEllipse" cx="280" cy="190" r="9" />
+  </g>
+</svg>
