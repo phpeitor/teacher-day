@@ -1,4 +1,5 @@
-const BRAIN_SVG_PATH = './resources/brain.svg';
+const BRAIN_NEW_SVG_PATH = './resources/brain.svg';
+const BRAIN_OLD_SVG_PATH = './resources/brain-old.svg';
 
 const colorThemes = [
   {
@@ -46,6 +47,18 @@ function cycleTheme() {
   applyTheme(colorThemes[activeThemeIndex]);
 }
 
+function showSvgInContainer(container, svgText) {
+  container.innerHTML = svgText;
+  addAnimationDelays(container);
+  container.addEventListener('click', cycleTheme);
+  container.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      cycleTheme();
+    }
+  });
+}
+
 async function loadBrainSvg() {
   const brainContainer = document.querySelector('.brainContainer');
 
@@ -53,24 +66,18 @@ async function loadBrainSvg() {
     return;
   }
 
+  const svgPath = Math.random() < 0.5 ? BRAIN_NEW_SVG_PATH : BRAIN_OLD_SVG_PATH;
+
   try {
-    const response = await fetch(BRAIN_SVG_PATH);
+    const response = await fetch(svgPath);
 
     if (!response.ok) {
-      throw new Error(`No se pudo cargar ${BRAIN_SVG_PATH}`);
+      throw new Error(`No se pudo cargar ${svgPath}`);
     }
 
-    brainContainer.innerHTML = await response.text();
-    addAnimationDelays(brainContainer);
-    brainContainer.addEventListener('click', cycleTheme);
-    brainContainer.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        cycleTheme();
-      }
-    });
+    showSvgInContainer(brainContainer, await response.text());
   } catch (error) {
-    brainContainer.innerHTML = `<img class="brainFallbackImage" src="${BRAIN_SVG_PATH}" alt="Cerebro creativo conectado">`;
+    brainContainer.innerHTML = `<img class="brainFallbackImage" src="${svgPath}" alt="Cerebro creativo conectado">`;
     brainContainer.classList.add('brainContainer--fallbackImage');
     console.warn(error);
   }
