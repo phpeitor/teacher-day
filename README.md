@@ -3,7 +3,7 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/drphp/)
 
 [![Video](https://img.youtube.com/vi/fONWx0vGRk8/0.jpg)](https://www.youtube.com/watch?v=fONWx0vGRk8)  
-[Ver demo](https://www.youtube.com/watch?v=fONWx0vGRk8)
+[![Video Demo](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=fONWx0vGRk8)
 
 Landing page interactiva para celebrar el Día del Maestro. Cada visita carga aleatoriamente uno de dos cerebros SVG animados con temática de neurociencia.
 
